@@ -1,0 +1,586 @@
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\SoftParking.dll.config
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\SoftParking.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\SoftParking.pdb
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\csc.exe
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\csc.exe.config
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\csc.rsp
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\csi.exe
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\csi.exe.config
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\csi.rsp
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.AppContext.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Console.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Net.Http.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Net.Sockets.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.ValueTuple.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\vbc.exe
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\vbc.exe.config
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\vbc.rsp
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\Antlr3.Runtime.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\Newtonsoft.Json.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.Helpers.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.Mvc.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.Optimization.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.Razor.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.WebPages.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\WebGrease.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.Helpers.xml
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.Mvc.xml
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.Optimization.xml
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.Razor.xml
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.WebPages.xml
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.xml
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.xml
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\Newtonsoft.Json.xml
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\Antlr3.Runtime.pdb
+C:\Users\nacho\source\repos\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\nacho\source\repos\SoftParking\SoftParking\obj\Debug\SoftParking.csprojAssemblyReference.cache
+C:\Users\nacho\source\repos\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CoreCompileInputs.cache
+C:\Users\nacho\source\repos\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CopyComplete
+C:\Users\nacho\source\repos\SoftParking\SoftParking\obj\Debug\SoftParking.dll
+C:\Users\nacho\source\repos\SoftParking\SoftParking\obj\Debug\SoftParking.pdb
+E:\SoftParking\SoftParking\bin\SoftParking.dll.config
+E:\SoftParking\SoftParking\bin\SoftParking.dll
+E:\SoftParking\SoftParking\bin\SoftParking.pdb
+E:\SoftParking\SoftParking\bin\roslyn\csc.exe
+E:\SoftParking\SoftParking\bin\roslyn\csc.exe.config
+E:\SoftParking\SoftParking\bin\roslyn\csc.rsp
+E:\SoftParking\SoftParking\bin\roslyn\csi.exe
+E:\SoftParking\SoftParking\bin\roslyn\csi.exe.config
+E:\SoftParking\SoftParking\bin\roslyn\csi.rsp
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.Managed.Core.targets
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\SoftParking\SoftParking\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.AppContext.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Collections.Immutable.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Console.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Globalization.Calendars.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Net.Http.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Net.Sockets.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Reflection.Metadata.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.ValueTuple.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Xml.XmlDocument.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.dll
+E:\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\SoftParking\SoftParking\bin\roslyn\vbc.exe
+E:\SoftParking\SoftParking\bin\roslyn\vbc.exe.config
+E:\SoftParking\SoftParking\bin\roslyn\vbc.rsp
+E:\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe
+E:\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe.config
+E:\SoftParking\SoftParking\bin\Antlr3.Runtime.dll
+E:\SoftParking\SoftParking\bin\Dapper.dll
+E:\SoftParking\SoftParking\bin\IronPdf.Assets.Rendering.Windows.dll
+E:\SoftParking\SoftParking\bin\IronPdf.dll
+E:\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\SoftParking\SoftParking\bin\Microsoft.Web.Infrastructure.dll
+E:\SoftParking\SoftParking\bin\Newtonsoft.Json.dll
+E:\SoftParking\SoftParking\bin\QRCoder.dll
+E:\SoftParking\SoftParking\bin\System.Web.Helpers.dll
+E:\SoftParking\SoftParking\bin\System.Web.Mvc.dll
+E:\SoftParking\SoftParking\bin\System.Web.Optimization.dll
+E:\SoftParking\SoftParking\bin\System.Web.Razor.dll
+E:\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.dll
+E:\SoftParking\SoftParking\bin\System.Web.WebPages.dll
+E:\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.dll
+E:\SoftParking\SoftParking\bin\WebGrease.dll
+E:\SoftParking\SoftParking\bin\Dapper.xml
+E:\SoftParking\SoftParking\bin\IronPdf.xml
+E:\SoftParking\SoftParking\bin\System.Web.Helpers.xml
+E:\SoftParking\SoftParking\bin\System.Web.Mvc.xml
+E:\SoftParking\SoftParking\bin\System.Web.Optimization.xml
+E:\SoftParking\SoftParking\bin\System.Web.Razor.xml
+E:\SoftParking\SoftParking\bin\System.Web.WebPages.xml
+E:\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.xml
+E:\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.xml
+E:\SoftParking\SoftParking\bin\Newtonsoft.Json.xml
+E:\SoftParking\SoftParking\bin\Antlr3.Runtime.pdb
+E:\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\SoftParking\SoftParking\obj\Debug\SoftParking.csprojAssemblyReference.cache
+E:\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CoreCompileInputs.cache
+E:\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CopyComplete
+E:\SoftParking\SoftParking\obj\Debug\SoftParking.dll
+E:\SoftParking\SoftParking\obj\Debug\SoftParking.pdb
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\SoftParking.dll.config
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\SoftParking.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\SoftParking.pdb
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\csc.exe
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\csc.exe.config
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\csc.rsp
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\csi.exe
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\csi.exe.config
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\csi.rsp
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.AppContext.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Console.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Net.Http.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.ValueTuple.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\vbc.exe
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\vbc.exe.config
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\vbc.rsp
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\Antlr3.Runtime.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\Dapper.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\IronPdf.Assets.Rendering.Windows.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\IronPdf.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\Newtonsoft.Json.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\QRCoder.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.Helpers.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.Mvc.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.Optimization.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.Razor.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.WebPages.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\WebGrease.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\Dapper.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\IronPdf.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.Helpers.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.Mvc.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.Optimization.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.Razor.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.WebPages.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\Newtonsoft.Json.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\Antlr3.Runtime.pdb
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.AssemblyReference.cache
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CoreCompileInputs.cache
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\obj\Debug\SoftParking.dll
+C:\Users\ezequielmartinez\Desktop\final tesis\SoftParking\SoftParking\obj\Debug\SoftParking.pdb
+D:\SoftParking\SoftParking\SoftParking\bin\SoftParking.dll.config
+D:\SoftParking\SoftParking\SoftParking\bin\SoftParking.dll
+D:\SoftParking\SoftParking\SoftParking\bin\SoftParking.pdb
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.exe
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.exe.config
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.rsp
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.exe
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.exe.config
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.rsp
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Managed.Core.targets
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.AppContext.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Collections.Immutable.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Console.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Globalization.Calendars.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Net.Http.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Net.Sockets.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Reflection.Metadata.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.ValueTuple.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XmlDocument.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.exe
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.exe.config
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.rsp
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe
+D:\SoftParking\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe.config
+D:\SoftParking\SoftParking\SoftParking\bin\Antlr3.Runtime.dll
+D:\SoftParking\SoftParking\SoftParking\bin\Dapper.dll
+D:\SoftParking\SoftParking\SoftParking\bin\IronPdf.Assets.Rendering.Windows.dll
+D:\SoftParking\SoftParking\SoftParking\bin\IronPdf.dll
+D:\SoftParking\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SoftParking\SoftParking\SoftParking\bin\Microsoft.Web.Infrastructure.dll
+D:\SoftParking\SoftParking\SoftParking\bin\Newtonsoft.Json.dll
+D:\SoftParking\SoftParking\SoftParking\bin\QRCoder.dll
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.Helpers.dll
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.Mvc.dll
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.Optimization.dll
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.Razor.dll
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.dll
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.dll
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.dll
+D:\SoftParking\SoftParking\SoftParking\bin\WebGrease.dll
+D:\SoftParking\SoftParking\SoftParking\bin\Dapper.xml
+D:\SoftParking\SoftParking\SoftParking\bin\IronPdf.xml
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.Helpers.xml
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.Mvc.xml
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.Optimization.xml
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.Razor.xml
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.xml
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.xml
+D:\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.xml
+D:\SoftParking\SoftParking\SoftParking\bin\Newtonsoft.Json.xml
+D:\SoftParking\SoftParking\SoftParking\bin\Antlr3.Runtime.pdb
+D:\SoftParking\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csprojAssemblyReference.cache
+D:\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CoreCompileInputs.cache
+D:\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CopyComplete
+D:\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.dll
+D:\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.pdb
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\SoftParking.dll.config
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\SoftParking.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\SoftParking.pdb
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.exe
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.exe.config
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.rsp
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.exe
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.exe.config
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.rsp
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.AppContext.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Console.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Net.Http.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.ValueTuple.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.exe
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.exe.config
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.rsp
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\Antlr3.Runtime.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\Dapper.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\IronPdf.Assets.Rendering.Windows.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\IronPdf.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\Newtonsoft.Json.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\QRCoder.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.Helpers.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.Mvc.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.Optimization.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.Razor.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\WebGrease.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\Dapper.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\IronPdf.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.Helpers.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.Mvc.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.Optimization.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.Razor.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\Newtonsoft.Json.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\Antlr3.Runtime.pdb
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.AssemblyReference.cache
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CoreCompileInputs.cache
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.dll
+C:\Users\ezequielmartinez\Desktop\Nueva carpeta\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.pdb
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\SoftParking.dll.config
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\SoftParking.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\SoftParking.pdb
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.exe
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.exe.config
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.rsp
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.exe
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.exe.config
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.rsp
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Managed.Core.targets
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.AppContext.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Collections.Immutable.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Console.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Globalization.Calendars.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Net.Http.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Net.Sockets.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Reflection.Metadata.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.ValueTuple.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XmlDocument.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.exe
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.exe.config
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.rsp
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe.config
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\Antlr3.Runtime.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\Dapper.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\IronPdf.Assets.Rendering.Windows.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\IronPdf.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\Microsoft.Web.Infrastructure.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\Newtonsoft.Json.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\QRCoder.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Helpers.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Mvc.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Optimization.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Razor.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\WebGrease.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\Dapper.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\IronPdf.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Helpers.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Mvc.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Optimization.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Razor.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\Newtonsoft.Json.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\Antlr3.Runtime.pdb
+D:\SoftParking\SoftParking\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SoftParking\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csprojAssemblyReference.cache
+D:\SoftParking\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CoreCompileInputs.cache
+D:\SoftParking\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CopyComplete
+D:\SoftParking\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.dll
+D:\SoftParking\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.pdb
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\SoftParking.dll.config
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\SoftParking.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\SoftParking.pdb
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.exe
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.exe.config
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csc.rsp
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.exe
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.exe.config
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\csi.rsp
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.AppContext.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Console.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Net.Http.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.ValueTuple.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.exe
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.exe.config
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\vbc.rsp
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\Antlr3.Runtime.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\Dapper.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\IronPdf.Assets.Rendering.Windows.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\IronPdf.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\Newtonsoft.Json.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\QRCoder.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Helpers.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Mvc.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Optimization.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Razor.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\WebGrease.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\Dapper.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\IronPdf.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Helpers.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Mvc.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Optimization.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.Razor.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\System.Web.WebPages.Razor.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\Newtonsoft.Json.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\Antlr3.Runtime.pdb
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.AssemblyReference.cache
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.csproj.CoreCompileInputs.cache
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.dll
+C:\Users\ezequielmartinez\Desktop\FINAL PS OK\SoftParking\SoftParking\SoftParking\SoftParking\obj\Debug\SoftParking.pdb

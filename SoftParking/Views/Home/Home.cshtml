@@ -1,0 +1,816 @@
+﻿@using System.Globalization;
+@using SoftParking.Models;
+@model SoftParking.Models.MvcModel
+
+@{
+    Layout = null;
+
+    var usr = (Usuario)Session["usr"];
+    var cultureInfo = new CultureInfo("es-AR");
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home ParkingSoft</title>
+    <link href="~/Content/css/panelStyle.css" rel="stylesheet" id="bootstrap-css">
+    <link href="~/Content/css/bootstrap.min-3.3.0.css" rel="stylesheet" id="bootstrap-css">
+    @* <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> *@
+    <script src="~/Content/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min-3.3.0.js"></script>
+    <script src="~/Content/js/panel.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/12c7af4725.js"></script>
+
+    <style type="text/css">
+        .retirado {
+            background-color: #b2e071;
+        }
+
+        .ingresado {
+            background-color: #fdc433;
+        }
+
+        .clock-dig {
+            position: fixed;
+            bottom: 0;
+            left: 5px;
+            z-index: 99999;
+            color: white;
+            font-size: 70px;
+            font-family: Orbitron;
+            letter-spacing: 7px;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="MyClockDisplay" class="clock-dig"></div>
+    <!-- Popups modals -->
+    <div id="modalIngresos" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 20px; text-align: center;">AGREGAR INGRESO</h4>
+                </div>
+                @using (Html.BeginForm("RegistrarIngreso", "Home", FormMethod.Post, new { @class = "ui form" }))
+                {
+                    <div class="modal-body">
+                        <p style="text-align: center;">Hora</p>
+                        <p class="clock text-center" style="font-size: 56px; width: 100%"></p>
+                        @Html.HiddenFor(m => m.cliente.FechaHora, new { @class = "clock", @id = "fechaHoraIngreso" })
+                    </div>
+                    <div class="modal-body">
+                        <p for="dominioIngreso" style=" text-align: center;">Dominio:</p>
+                        @Html.TextBoxFor(m => m.cliente.Dominio, new { @name = "dominio", @required = "true", @class = "text-center", Style = "margin: 0 auto; display: block;" })
+                        <br><br>
+                    </div>
+                    <div style="width: 60%; margin: 0 auto;">
+                        @Html.DropDownListFor(m => m.cliente.IdTipoVehiculo,
+                           new SelectList(Model.lstTipoVehiculos, "Id", "Tipo"), "Tipo de Vehiculo", new { @class = "text-center form-select", Style = "margin: 0 auto; display: block;" })
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary btn-submit-ingreso" onclick="return descargaArchivoIngreso();">Agregar e imprimir</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="modalEgresos" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 20px; text-align: center;">CONFIRMAR EGRESO</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p style="text-align: center;">Hora</p>
+                    <p class="clock text-center" id="clock-egreso" style="font-size: 56px; width: 100%"></p>
+                    <input type="hidden" id="clock-egreso-input" />
+                </div>
+
+                @using (Html.BeginForm("RegistrarEgreso", "Home", FormMethod.Post, new { @class = "ui form" }))
+                {
+                    <div></div>
+                    <div class="modal-body" style="padding: 0; height: 70px;">
+                        <p for="dominioEgreso" style="text-align: center;">Dominio:</p>
+                        @Html.TextBoxFor(m => m.cliente.Dominio, new { @name = "dominio", @id = "dominio-egreso", @required = "true",
+                        @class = "text-center", Style = "margin: 0 auto; display: block;" })
+                        <br><br>
+                    </div>
+                    <div class="modal-body" style="padding: 0; height: 30px;">
+                        <p id="tipo-vehiculo-egreso" style="text-align: center;"></p>
+                        <br><br>
+                    </div>
+                    <div class="modal-body">
+                        <p class="label-fecha text-center"></p>
+                        <input type="hidden" id="hora-ingreso" />
+                        <button type="button" class="btn btn-primary btn-calcular-valor" style="font-size: 20px; margin: 0 auto; width: 30%; display: block;">Calcular</button>
+                        <p class="m-5 text-center" id="p-resultado" style="margin-top: 15px; font-size: 22px;"></p>
+                    </div>
+                    <div>
+                        <p for="importeEgreso" style="font-size: 20px; text-align: center;">Importe:</p>
+                        @Html.HiddenFor(m => m.venta.Monto, new { @id = "importe-egreso", Style = "text-align: center; margin-left: 36%;" })
+                        <input style="  text-align: center; margin-left: 36%;" type="text" id="importeEgreso"
+                               name="importeEgreso" disabled>
+                        <br><br>
+                    </div>
+
+                    <div>
+                        @Html.HiddenFor(m => m.venta.HoraEgreso, new { @class = "clock", @id = "hora-egreso" })
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-warning" onclick="return descargaArchivoEgreso();">Imprimir</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="modalEstadias" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 20px; text-align: center;">AGREGAR ESTADÍA</h4>
+                </div>
+                @using (Html.BeginForm("RegistrarEstadia", "Home", FormMethod.Post, new { @class = "ui form" }))
+                {
+                    <div class="modal-body">
+                        <p for="dominioEstadia" style="text-align: center;">Dominio:</p>
+                        @Html.TextBoxFor(m => m.ventaEstadias.Dominio, new { @name = "dominio", @required = "true", @class = "text-center", Style = "margin: 0 auto; display: block;" })
+
+                        <br><br>
+                    </div>
+                    <div>
+                        <p style="text-align: center;" for="estadiaVehiculo">Tipo de estadía:</p>
+                        @Html.DropDownListFor(m => m.ventaEstadias.Id_tipo_estadia,
+                                new SelectList(Model.lstTiposEstadias, "IdTipoEstadia", "TipoMonto"), "Tipo de Estadia", new { @class = "text-center", Style = "margin: 0 auto; display: block;" })
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" onclick="return descargarArchivoEstadia();">Agregar e imprimir</button>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+    <div id="modalPagos" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="width: 750px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 20px; text-align: center;">PAGO DE ABONOS</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table abonados">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Dominio</th>
+                                <th scope="col">Tipo abono</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Tipo vehiculo</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.lstAbonados != null)
+                            {
+                                foreach (var item in Model.lstAbonados)
+                                {
+                                    <tr>
+                                        <th scope="row">@item.Nombre</th>
+                                        <td>@item.Apellido</td>
+                                        <td>@item.Dominio</td>
+                                        <td>@item.TipoAbono</td>
+                                        <td>@string.Format(cultureInfo,"{0:c}", item.Importe)</td>
+                                        <td>@item.TipoVehiculo</td>
+                                        <td><button type="button" class="btn btn-primary px-3 btn-activar" onclick="obtenerValoresAbonado(@Json.Encode(@item))"><i class="fa fa-edit" style="font-size: 18px"></i></button></td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                @using (Html.BeginForm("ConfirmarAbono", "Home", FormMethod.Post))
+                {
+                    @Html.HiddenFor(e => e.abonado.IdAbonado, new { @id = "idPeriodoAbonado" })
+
+                    <label id="lbl-abonado" style="margin-left: 20px;
+                    padding: 10px;
+                    color: green;
+                    border: 1px solid black;"></label>
+
+                    <div class="modal-body">
+                        <div>
+                            <p for="precioNuevoEstadia" style="text-align: center;">Importe:</p>
+                            @Html.TextBoxFor(e => e.abonado.Importe, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;" })
+                        </div>
+
+                        @Html.DropDownListFor(m => m.abonado.IdPeriodo,
+                      new SelectList(Model.lstPeriodos, "Id_periodo", "Mes_periodo"), "Periodo", new { @class = "ui dropdown" })
+                    </div>
+                    <div class="modal-footer" style="margin-bottom: 5%;">
+                        <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                                data-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 5%;" onclick="return descargarArchivoConfirmacionAbono();">Guardar</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="modalGastos" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                @using (Html.BeginForm("RegistrarGasto", "Home", FormMethod.Post, new { @class = "ui form" }))
+                {
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="font-size: 20px; text-align: center;">GASTOS</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p for="montoGasto" style="text-align: center;">Monto:</p>
+                        @Html.TextBoxFor(m => m.gasto.Monto, new { @name = "monto", @required = "true", @class = "text-center", Style = "margin: 0 auto; display: block;" })
+                        <br><br>
+                    </div>
+                    <div class="modal-body">
+                        <p for="razonGasto" style="text-align: center;">Razón:</p>
+                        @Html.TextBoxFor(m => m.gasto.Detalle, new { @name = "razon", @required = "true", @class = "text-center", Style = "margin: 0 auto; display: block;" })
+                        <br><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
+                }
+
+                @*<div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.lstGastos)
+                            {
+                                <tr>
+                                    <th scope="row">@item.IdGasto</th>
+                                    <td>$@item.Monto</td>
+                                    <td>@item.Detalle</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>*@
+            </div>
+        </div>
+    </div>
+
+    <div id="modalCierreCaja" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div>
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="font-size: 20px; text-align: center;">CIERRE DE CAJA</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p style="font-size: 18px;">Fecha: @DateTime.Now</p>
+                        <div>
+                            Subtotal autos: @String.Format(cultureInfo,"{0:c}", Model.montoCierreCaja)
+                        </div>
+                        <div>
+                            Subtotal estadías: @String.Format(cultureInfo, "{0:c}", Model.montoCierreCajaSubtotalEstadias)
+                        </div>
+                        <div>
+                            Subtotal abonos: @String.Format(cultureInfo, "{0:c}", Model.montoCierreCajaSubtotalAbonos)
+                        </div>
+                        <div>
+                            Total: @String.Format(cultureInfo, "{0:c}", Model.montoCierreCajaTotal)
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fin Popups modals -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
+                    MENU
+                </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="font-weight: bold; font-size: 20px" class="navbar-brand" href="#">
+                   Home
+                </a>
+            
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p style="padding-top: 15px; padding-bottom: 15px; margin: 0;">@(((Usuario)Session["usr"]).Username)</p>
+                    </li>
+                    <li class="dropdown ">
+                        <a style="font-weight: bold; font-size: 18px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Menú
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">HERRAMIENTAS</li>
+                            @if (usr.EsAdmin)
+                            {
+                                <li class=""><a href="@Url.Action("PanelControl", "Panel")">Panel de control</a></li>
+                                <li class=""><a href="@Url.Action("PanelReportes", "Reporte")">Reportes</a></li>
+                            }
+                            <li class=""><a href="@Url.Action("Terminos", "Home")">Términos y condiciones</a></li>
+                            <li class=""><a href="@Url.Action("Preguntas", "Home")">Preguntas frecuentes / Contacto </a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("CerrarSesion", "Login")">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid main-container">
+        <div class="col-md-2 sidebar">
+            <div class="row">
+                <!-- uncomment code for absolute positioning tweek see top comment in css -->
+                <div class="absolute-wrapper"> </div>
+                <!-- Menu -->
+                <div class="side-menu">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <!-- Main Menu -->
+                        <div class="side-menu-container">
+                            <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="#" style="font-weight:bold; font-size: 18px;">
+                                        <i class="fa fa-chevron-right fa-fw"></i>
+                                        Ingresos del día
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalIngresos" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-plus fa-fw"></i> Agregar
+                                        ingreso
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalEgresos" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-minus fa-fw"></i> Confirmar
+                                        egreso
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalEstadias" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-car fa-fw"></i> Agregar
+                                        estadía
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalPagos" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-usd fa-fw"></i> Confirmar
+                                        pagos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalGastos" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-money fa-fw"></i> Gastos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalCierreCaja" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-money fa-fw"></i> Cierre de caja
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 content">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Vehiculos ingresados por hora
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Dominio</th>
+                                <th scope="col">Fecha Ingreso</th>
+                                <th scope="col">Fecha Egreso</th>
+                                <th scope="col">Tipo Vehiculo</th>
+                                <th scope="col">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.lstReporteIngresosVehiculos)
+                            {
+                                <tr>
+                                    <th scope="row">@item.Dominio</th>
+                                    <td>@item.FechaIngreso</td>
+                                    <td>@((item.Estado) ? "" : item.FechaEgreso.ToString())</td>
+                                    <td>@item.TipoVehiculo</td>
+                                    <td class="@item.getStyleRow()">@((item.Estado) ? "Ingresado" : "Retirado")</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Estadías
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Dominio</th>
+                                <th scope="col">Tipo Estadia</th>
+                                <th scope="col">Importe</th>
+                                <th scope="col">Fecha Ingreso</th>
+                                <th scope="col">Fecha Egreso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.lstEstadias)
+                            {
+                                <tr>
+                                    <th scope="row">@item.Dominio</th>
+                                    <td>@item.TipoEstadia</td>
+                                    <td>@string.Format(cultureInfo,"{0:c}", item.Importe)</td>
+                                    <td>@item.Fecha</td>
+                                    <td>@item.FechaEgreso</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Abonos
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Dominio</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Tipo de abono</th>
+                                <th scope="col">Tipo de vehiculo</th>
+                                <th scope="col">Importe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.lstAbonadosDelDia)
+                            {
+                                <tr>
+                                    <th scope="row">@item.Dominio</th>
+                                    <td>@item.Nombre</td>
+                                    <td>@item.TipoAbono</td>
+                                    <td>@item.TipoVehiculo</td>
+                                    <td>@string.Format(cultureInfo,"{0:c}", item.Importe)</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.mostrarAlertSuccess)
+    {
+        <div class="alert alert-success" role="alert" id="success-alert" style="width: 50%; margin: 0 auto;">
+            Se guardó correctamente
+        </div>
+    }
+
+    <script type="text/javascript">
+        var value = '';
+        var valor;
+
+        var myVar = setInterval(function () {
+            myTimer();
+        }, 1000);
+
+        function myTimer() {
+            var d = new Date();
+            var elements = document.getElementsByClassName("clock");
+            elements[0].innerHTML = d.toLocaleTimeString();
+            document.getElementById('clock-egreso').innerHTML = d.toLocaleTimeString();
+            document.getElementById('clock-egreso-input').value = d.toLocaleDateString() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+            elements[1].value = value = d.toISOString();
+        }
+
+        $('#dominio-egreso').on('input', function () {
+            var serviceURL = '/Home/GetDominioIngreso';
+            var value = $(this).val();
+            $.ajax({
+                type: "GET",
+                url: serviceURL,
+                data: { 'dominio': value },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    successFunc(data)
+                },
+                error: errorFunc
+            });
+
+            function successFunc(data) {
+                if (data) {
+                    valor = data;
+                    var labelFecha = document.getElementsByClassName('label-fecha');
+                    if (data.FechaNulleable) {
+                        labelFecha[0].innerHTML = 'Fecha de ingreso: ' + convertToJavaScriptDate(data.FechaNulleable)[0];
+                        $('#hora-ingreso').val(convertToJavaScriptDate(data.FechaNulleable)[1]);
+                    } else {
+                        labelFecha[0].innerHTML = '';
+                    }
+                }
+
+            }
+
+            function convertToJavaScriptDate(value) {
+                var pattern = /Date\(([^)]+)\)/;
+                var results = pattern.exec(value);
+                var dt = new Date(parseFloat(results[1]));
+                var array = [
+                    dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear() + " <strong>" + dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds() + '</strong>',
+                    dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds()
+                ];
+                return array;
+            }
+
+            function errorFunc() {
+                console.log('error');
+            }
+        });
+
+        function diff(start, end) {
+            start = start.split(":");
+            end = end.split(":");
+            var startDate = new Date(0, 0, 0, start[0], start[1], start[2]);
+            var endDate = new Date(0, 0, 0, end[0], end[1], start[2]);
+            var diff = endDate.getTime() - startDate.getTime();
+            var hours = Math.floor(diff / 1000 / 60 / 60);
+            diff -= hours * 1000 * 60 * 60;
+            var minutes = Math.floor(diff / 1000 / 60);
+
+            if (hours < 0)
+                hours = hours + 24;
+
+            return [((hours <= 9 ? "0" : "") + hours), ((minutes <= 9 ? "0" : "") + minutes)];
+        }
+
+        function tiempoAMinutos(value) {
+            var a = value.split(':');
+
+            var minutes = (+a[0]) * 60 + (+a[1]);
+            return minutes;
+        }
+
+        $('.btn-calcular-valor').click(function () {
+            var horaIngreso = $('#hora-ingreso').val();
+            var horaEgreso = $('#clock-egreso').text();
+
+            var labelFecha = document.getElementsByClassName('label-fecha');
+            labelFecha[0].innerHTML += '<br>' +
+                'Fecha de egreso: ' + $('#clock-egreso-input').val();
+
+            var arrTime = diff(horaIngreso, horaEgreso);
+            var tiempoTranscurrido = arrTime[0] + ':' + arrTime[1];
+            document.getElementById('p-resultado').innerHTML = 'Tiempo transcurrido: ' +
+                '<strong>' + arrTime[0] + ':' + arrTime[1] + 'hs</strong> <br>';
+
+            var montoValor = getAmount(arrTime);
+            $('#importeEgreso').val('$' + montoValor);
+            $('#importe-egreso').val(montoValor);
+            document.getElementById('hora-egreso').value = $('#clock-egreso-input').val();
+            document.getElementById('tipo-vehiculo-egreso').innerHTML = 'Tipo de vehiculo: ' + getTipoVehiculoData(valor.IdTipoVehiculo);
+        })
+
+        function getAmount(arrTime) {
+            var hours = parseInt(arrTime[0]);
+            var minutes = parseInt(arrTime[1]);
+            var amount = 0;
+            var price = getTipoVehiculoData(valor.IdTipoVehiculo, true);
+            var fractionalPrice = price / 2;
+
+            amount = price; // siempre se cobra 1 hr
+            if (hours > 1) { // se empieza a calcular las fracciones con las horas completas
+                if (minutes <= 30) {
+                    amount += fractionalPrice;
+                }
+                amount += (hours - 1) * price;
+            } else if (minutes <= 30) {
+                //amount = fractionalPrice;
+            }
+
+            return amount;
+
+        }
+
+        function getTipoVehiculoData(tipoVehiculo, getMonto = false) {
+            var montosTarifas = @Html.Raw(Json.Encode(Model.lstTarifas));
+
+            switch (tipoVehiculo) {
+                case 1:
+                    return getMonto ? montosTarifas.find(x => x.IdTipoVehiculo === 1).Precio : 'Auto'; // auto
+                case 2:
+                    return getMonto ? montosTarifas.find(x => x.IdTipoVehiculo === 2).Precio : 'Pick-up'; // pickup
+                case 3:
+                    return getMonto ? montosTarifas.find(x => x.IdTipoVehiculo === 3).Precio : 'Moto'; // moto
+                default:
+                break;
+            }
+        }
+
+        // ALERT
+
+        $(document).ready(function () {
+            showTime();
+            var mostrarSuccess = @Json.Encode(Model.mostrarAlertSuccess);
+            if (mostrarSuccess) {
+                mostrarSuccessAlert();
+            }
+        });
+
+        function mostrarSuccessAlert() {
+            setTimeout(function () {
+                $("#success-alert").alert('close');
+            }, 3000);
+
+        }
+
+        function obtenerValoresAbonado(values) {
+            var idAbonado = values.IdAbonado;
+            var nombre = values.Nombre + ' ' + values.Apellido;
+            document.getElementById("idPeriodoAbonado").value = idAbonado;
+
+            document.getElementById('lbl-abonado').innerHTML = nombre;
+        }
+
+        $('.btn-submit-ingreso').on('click', function() {
+            $('#modalIngresos').modal('hide');
+        });
+
+        function descargarArchivoEstadia() {
+            setTimeout(function () {
+                window.open('@Url.Action("GenerarPdfEstadia", "Home")');
+            }, 3000);
+        }
+
+        function descargarArchivoConfirmacionAbono() {
+            setTimeout(function () {
+                window.open('@Url.Action("GenerarPdfConfirmacionAbono", "Home")');
+            }, 3000);
+        }
+
+        function descargaArchivoEgreso() {
+            setTimeout(function () {
+                window.open('@Url.Action("GenerarPdfEgreso", "Home")');
+            }, 3000);
+        }        
+
+        function descargaArchivoIngreso() {
+            setTimeout(function () {
+                window.open('@Url.Action("GenerarPdfIngreso", "Home")');
+            }, 3000);
+        }
+
+        /*CLOCK*/
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours(); // 0 - 23
+            var m = date.getMinutes(); // 0 - 59
+            var s = date.getSeconds(); // 0 - 59
+            var session = "AM";
+
+            //if (h == 0) {
+            //    h = 12;
+            //}
+
+            //if (h > 12) {
+            //    h = h - 12;
+            //    session = "PM";
+            //}
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            var time = h + ":" + m + ":" + s + " ";
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;
+
+            setTimeout(showTime, 1000);
+
+        }
+
+        
+        /* MONTO */
+        function transformMount(value, currencyCode = '$', showSymbol = true) {
+            return `${(showSymbol) ? currencyCode : ''} ${localeString(value)}`;
+        }
+
+        function localeString(nStr) {
+            if (nStr === '') {
+                return '';
+            }
+            let x;
+            let x1;
+            let x2;
+            let rgx;
+            let y1;
+            let y2;
+            nStr += '';
+            x = nStr.split('.');
+            x1 = x[0];
+            x2 = x.length > 1 ? ',' + x[1] : '';
+            rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + '.' + '$2');
+            }
+
+            if (x1.indexOf(',') !== -1) {
+                y1 = x1.slice(x1.lastIndexOf(',')).replace(/\./g, '');
+
+                y2 = x1.split(',');
+                x = y2[0] + y1;
+            } else {
+                x = x1 + x2;
+                if (missingOneDecimalCheck(x)) {
+                    return (x += '0');
+                }
+                if (missingAllDecimalsCheck(x)) {
+                    return (x += ',00');
+                }
+            }
+
+            return x;
+        }
+
+        function missingOneDecimalCheck(nStr) {
+            nStr += '';
+            const x = nStr.split(',')[1];
+            if (x && x.length === 1) {
+                return true;
+            }
+            return false;
+        }
+
+        function missingAllDecimalsCheck(nStr) {
+            nStr += '';
+            const x = nStr.split(',')[1];
+            if (!x) {
+                return true;
+            }
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+﻿@using SoftParking.Models
+@model SoftParking.Models.MvcModel
+
+@{
+    Layout = null;
+    var usr = (Usuario)Session["usr"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Terminos y Condiciones </title>
+    <link href="~/Content/css/panelStyle.css" rel="stylesheet" id="bootstrap-css">
+    <link href="~/Content/css/bootstrap.min-3.3.0.css" rel="stylesheet" id="bootstrap-css">
+    @* <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> *@
+    <script src="~/Content/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min-3.3.0.js"></script>
+    <script src="~/Content/js/panel.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/12c7af4725.js"></script>
+
+    <style type="text/css">
+        .retirado {
+            background-color: #b2e071;
+        }
+
+        .ingresado {
+            background-color: #fdc433;
+        }
+
+        .clock-dig {
+            position: fixed;
+            bottom: 0;
+            left: 5px;
+            z-index: 99999;
+            color: white;
+            font-size: 70px;
+            font-family: Orbitron;
+            letter-spacing: 7px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="MyClockDisplay" class="clock-dig"></div>
+    <!-- Fin Popups modals -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
+                    MENU
+                </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="font-weight: bold; font-size: 18px" class="navbar-brand" href="#">
+                    Términos y condiciones
+                </a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p style="padding-top: 15px; padding-bottom: 15px; margin: 0;">@(((Usuario)Session["usr"]).Username)</p>
+                    </li>
+                    <li class="dropdown ">
+                        <a style="font-weight: bold; font-size: 18px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Menú
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">HERRAMIENTAS</li>
+                            <li class=""><a href="@Url.Action("Home", "Home")">Home</a></li>
+                            @if (usr.EsAdmin)
+                            {
+                                <li class=""><a href="@Url.Action("PanelControl", "Panel")">Panel de control</a></li>
+                                <li class=""><a href="@Url.Action("PanelReportes", "Reporte")">Reportes</a></li>
+                            }
+                            <li class=""><a href="@Url.Action("Terminos", "Home")">Términos y condiciones</a></li>
+                            <li class=""><a href="@Url.Action("Preguntas", "Home")">Preguntas frecuentes / Contacto </a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("CerrarSesion", "Login")">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- CONTENIDO -->
+    <div class="container-fluid main-container">
+        <div class="col-md-12 content">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b style="font-size:20px"> Terminos y Condiciones </b>
+                </div>
+                <div class="panel-body">
+                   
+                    Bienvenido a PARKINGSOFT proporcionado por Fprog Develop. La compañía se complace ofrecerle acceso al Servicio, sujeto a estos términos y condiciones y a la Política de Privacidad correspondiente de Fprog Develop.
+                    <br>Al acceder y utilizar el Servicio, usted expresa su consentimiento, acuerdo y entendimiento de los Términos de Servicio y la Política de Privacidad. Si no está de acuerdo con los Términos de Servicio o la Política de Privacidad, no utilice el Servicio. Si utiliza el servicio está aceptando las modalidades operativas en vigencia descriptas más adelante, las declara conocer y aceptar, las que se habiliten en el futuro y en los términos y condiciones que a continuación se detallan:<br>
+                    <br><b> Acceso </b><br>
+                    En ningún caso debe entenderse que la solicitud de un producto o servicio implica obligación alguna para el Acceso y uso del Servicio.
+                    Para operar el Servicio se requerirá siempre que se trate de personal perteneciente a la empresa “ParkingNet Cocheras” quienes podrán acceder mediante cualquier dispositivo con conexión a la Red Internet un nombre de usuario y una clave personal, que será provista por la Fprog Develop o un usuario autorizado, como requisito previo a la primera operación de un nuevo usuario. La clave personal y todo o cualquier otro mecanismo adicional de autenticación personal provisto por “Parking Net Cocheras” tiene el carácter de secreto e intransferible, y por lo tanto asumo las consecuencias de su divulgación a terceros, liberando a Fprog Develop de toda responsabilidad que de ello se derive.
+                    En ningún caso Fprog Develop requerirá que le suministre la totalidad de los datos, ni enviará mail requiriendo información personal alguna.<br>
+                    <br><b>Costo del Servicio</b><br>
+                    La empresa Fprog Develop podrá cobrar comisiones por el mantenimiento y/o uso de este Servicio o los que en el futuro implemente, entendiéndose facultado expresamente para efectuar los correspondientes débitos en mis cuentas, aún en descubierto, por lo que presto para ello mi expresa conformidad. En caso de cualquier modificación a la presente previsión, lo comunicará con al menos 60 días de antelación.
+                    <br>
+                    <br><b>Vigencia</b><br>
+                    El Usuario podrá dejar sin efecto la relación que surja de la presente, en forma inmediata, sin otra responsabilidad que la derivada de los gastos originados hasta ese momento. Si el cliente incumpliera cualquiera de las obligaciones asumidas en su relación contractual con empresa Fprog Develop, o de los presentes Términos y Condiciones, “Parking Net” podrá decretar la caducidad del presente Servicio en forma inmediata, sin que ello genere derecho a indemnización o compensación alguna. empresa Fprog Develop podrá dejar sin efecto la relación que surja de la presente, con un preaviso mínimo de 60 días, sin otra responsabilidad.
+                    Validez de operaciones y notificaciones<br>
+                    Los registros emitidos por el software serán prueba suficiente de las operaciones cursadas por dicho canal. Renuncio expresamente a cuestionar la idoneidad o habilidad de ese medio de prueba. A los efectos del cumplimiento de disposiciones legales o contractuales, se otorga a las notificaciones por este medio el mismo alcance de las notificaciones mediante documento escrito.<br>
+                    <br><b>Propiedad Intelectual</b><br>
+                    El software en Argentina está protegido por la ley 11.723, que regula la propiedad intelectual y los derechos de autor de todos aquellos creadores de obras artísticas, literarias y científicas.<br>
+                    <br><b>Privacidad de la Informacion</b><br>
+                    Para utilizar los Servicios ofrecidos por PARKINGSOFT, los Usuarios deberán facilitar determinados datos de carácter personal. Su información personal se procesa y almacena en servidores que mantienen altos estándares de seguridad y protección tanto física como tecnológica. Para mayor información sobre la privacidad de los Datos Personales y casos en los que será revelada la información personal, se pueden consultar nuestras políticas de privacidad.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="container-fluid main-container">
+            <div class="col-md-12 content">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <b style="font-size:20px">Políticas de privacidad Protección de datos</b><br>
+                    </div>
+                    <div class="panel-body">
+
+
+                        <b>Utilización de datos</b><br>
+                        Fprog Develop está comprometida con la protección de sus datos online. Nosotros nos comprometemos a proteger su información personal y tomar todas las medidas apropiadas, dentro de las mejores prácticas
+                        para garantizarle que utilizaremos dicha información apenas de acuerdo a su voluntad
+                        y a sus necesidades para el uso de los servicios de Fprog Develop.<br />
+                        Utilizamos tecnologías comunes de Internet, tales como <b>cookies</b> y beacons para garantizar la integridad de nuestra página web y adaptarla a sus necesidades personales.
+                        En este sentido, usted entiende y autoriza expresamente que la empresa Fprog Develop utilicé dichas tecnologías, o similares, para acceder a la información sobre su cuenta de usuario o para recopilar
+                        información de forma automática, con el fin de ofrecer un mejor servicio y más personalizado. Usted tiene la posibilidad de configurar su navegador para ser avisado de la recepción de dichas tecnologías,
+                        y para impedir su instalación en su disco duro. Para utilizar los servicios de Fprog Develop no es necesario que usted autorice la recepción de dichas tecnologías, a pesar de que en este caso, el acceso
+                        puede estar restringido a determinados servicios.
+                        Siempre que la opción que impide la instalación de estas tecnologías no haya sido activada, usted puede buscar en el disco duro de su ordenador, conforme a las instrucciones del propio navegador,
+                        y eliminar manualmente cualquier, cookies, beacons, o similares. <br />
+                        <br /><b>Protección de sus datos</b>  <br />
+                        Fprog Develop utiliza una variedad de medidas de seguridad administrativa, tanto internas como técnica para proteger su información personal.
+                        Fprog Develop establece reglas de procedimientos de control interno que tienen que ver específicamente con el manejo de los datos personales.
+                        Estos incluyen medidas de control para la protección de la información privada recogida por nosotros en línea.
+                        Los funcionarios de Fprog Develop están capacitados para comprender y cumplir con estas medidas de control.
+                        Por otra parte, nuestros propios funcionarios están conscientes de nuestra protección de información de datos, directrices y normas. A pesar que estamos comprometidos con la
+                        protección de sus informaciones personales, usted también debe tomar medidas de precaución necesaria a protección de sus informaciones personales durante el uso del software.
+                        Fuera de ello, Fprog Develop emplea sus mejores esfuerzos, considerando la vulnerabilidad de los sistemas informáticos, y los constantes avances de las tecnologías de invasiones,
+                        Fprog Develop no se responsabiliza por los actos de terceros que logren recolectar o utilizar, por cualquier medio, datos catastrales e información de usted.
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

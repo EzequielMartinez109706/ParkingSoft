@@ -1,0 +1,150 @@
+﻿@using SoftParking.Models
+@model SoftParking.Models.MvcModel
+
+@{
+    Layout = null;
+    var usr = (Usuario)Session["usr"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Preguntas Frecuentes / Contacto </title>
+    <link href="~/Content/css/panelStyle.css" rel="stylesheet" id="bootstrap-css">
+    <link href="~/Content/css/bootstrap.min-3.3.0.css" rel="stylesheet" id="bootstrap-css">
+    @* <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> *@
+    <script src="~/Content/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min-3.3.0.js"></script>
+    <script src="~/Content/js/panel.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/12c7af4725.js"></script>
+
+    <style type="text/css">
+        .retirado {
+            background-color: #b2e071;
+        }
+
+        .ingresado {
+            background-color: #fdc433;
+        }
+
+        .clock-dig {
+            position: fixed;
+            bottom: 0;
+            left: 5px;
+            z-index: 99999;
+            color: white;
+            font-size: 70px;
+            font-family: Orbitron;
+            letter-spacing: 7px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="MyClockDisplay" class="clock-dig"></div>
+    <!-- Fin Popups modals -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
+                    MENU
+                </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="font-weight: bold; font-size: 18px" class="navbar-brand" href="#">
+                    Preguntas Frecuentes / Contacto
+                </a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p style="padding-top: 15px; padding-bottom: 15px; margin: 0;">@(((Usuario)Session["usr"]).Username)</p>
+                    </li>
+                    <li class="dropdown ">
+                        <a style="font-weight: bold; font-size: 18px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Menú
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">HERRAMIENTAS</li>
+                            <li class=""><a href="@Url.Action("Home", "Home")">Home</a></li>
+                            @if (usr.EsAdmin)
+                            {
+                                <li class=""><a href="@Url.Action("PanelControl", "Panel")">Panel de control</a></li>
+                                <li class=""><a href="@Url.Action("PanelReportes", "Reporte")">Reportes</a></li>
+                            }
+                            <li class=""><a href="@Url.Action("Terminos", "Home")">Términos y condiciones</a></li>
+                            <li class=""><a href="@Url.Action("Preguntas", "Home")">Preguntas frecuentes / Contacto </a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("CerrarSesion", "Login")">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- CONTENIDO -->
+
+    <div class="container-fluid main-container">
+        <div class="col-md-12 content">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b style="font-size:20px">Preguntas frecuentes</b><br>
+
+                </div>
+                <div class="panel-body">
+                    <b>¿Dónde encuentro el Menú?</b><br />
+                    Para acceder al menú debe ingresar con su usuario y contraseña. En la esquina superior derecha encontrará el Menú el cual cuenta con diferentes opciones dependiendo el tipo de usuario que lo solicite.<br />
+                    <br /><b>¿Cómo creo un nuevo usuario?</b> <br />
+                    Para crear un nuevo usuario primero debe acceder al sistema un credenciales de usuario administrador, (el mismo posee acceso total al sistema) de no poseer las credenciales necesarias o haber olvidado la contraseña puede comunicarse con nuestro centro de atención para proveerle unas nuevas credenciales. Como segundo paso deberá acceder al Menú, en el seleccionar el Panel de Control, una nueva ventana se le presentará en ella seleccione la opción “Agregar Usuario” en ella podrá crear un nuevo usuario, podrá seleccionar si el mismo tendrá o no permisos de administrador.
+                    <br /> <br /><b>¿Cómo modifico mi contraseña?</b> <br />
+                    En caso de necesitar una modificación de su contraseña deberá acceder al Menú dentro del mismo ingresar al apartado Panel de control opción “Modificar Usuarios” se le desplegará una ventana en la cual seleccionara el usuario y contraseña que desea modificar, guarda los cambios y su contraseña ya habrá sido modificada.
+                    Dado el caso que no pueda acceder ya que olvidó su contraseña deberá solicitar acceso a un usuario administrador. Si este último carece de acceso se deberá solicitar ayuda al centro de atención de Fprog Develop.
+                    <br /> <br /><b>¿Cómo registrar el ingreso y el egreso de un vehículo?</b><br />
+                    Para proceder al registro del ingreso de un vehículo en la pantalla principal deberá seleccionar la opción “Agregar Ingreso” en la ventana emergente se le solicitaran los datos del nuevo vehículo. Presionando el botón “agregar e imprimir” se dejará registrado el vehículo y se procederá con la impresión del ticket correspondiente.
+                    Para registrar el egreso de un vehículo en la pantalla principal deberá seleccionar la opción “Registrar Egreso” en la ventana emergente tendrá que ingresar los datos del vehículo de forma manual o mediante el lector de códigos QR (si lo posee). Calcular el tiempo que el vehículo permaneció en las instalaciones mediante el botón provisto para dicha acción y para finalizar presionando el botón “imprimir” se procederá con la impresión del ticket correspondiente.
+                    <br /> <br /><b>¿Como modifico las tarifas?</b>
+                    <br />El software PARKINGSOFT cuenta con un apartado en la pantalla Panel de Control llamado “ Modificar Tarifas” en el cual podrá cambiar el valor de las tarifas de estacionamiento por hora.
+                    <br /> <br /><b> ¿Cómo accedo a los reportes?</b>
+                    <br />Siendo un usuario administrador es sumamente importante el poder acceder a los reportes. Para ello debe dirigirse al Menú y en el seleccionar la opción Reportes. Una nueva pantalla se abrirá y en ella encontrará todos los reportes necesarios.
+                    <br /> <br /><b>¿Cómo cerrar sesión?</b>
+                    <br /> Para que cualquier usuario pueda cerrar sesión solo debe dirigirse al Menú y seleccionar la opción “Cerrar Sesión”.
+                    <br /> <br /><b> ¿cómo creo una nueva categoría de tarifa?</b><br />
+                    PARKINGSOFT no proporciona el acceso a los usuarios para la creación de nuevas categorías de tarifas, pero puede solicitar una nueva categoría a través de nuestro centro de atención.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid main-container">
+        <div class="col-md-12 content">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b style="font-size:20px">Contactanos</b><br>
+
+                </div>
+                <div class="panel-body">
+                    En Fprog Develop contamos con un equipo altamente capacitado para resolver todas sus dudas e inconvenientes en el menor tiempo posible.<br />
+                    Para acceder a este equipo puede contactarlo mediante correo electrónico <b>support@fprog.com.ar.</b> Por línea telefónica <b>(+549-0351) 6748821</b> o a través de nuestro chat en vivo por nuestra web <b>www.fprogdeveloping.com.ar</b>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

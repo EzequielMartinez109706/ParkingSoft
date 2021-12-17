@@ -1,0 +1,412 @@
+﻿@using System.Globalization;
+@using SoftParking.Models;
+@model SoftParking.Models.MvcModel
+
+@{
+    Layout = null;
+    var cultureInfo = new CultureInfo("es-AR");
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="~/Content/css/panelStyle.css" rel="stylesheet" id="bootstrap-css">
+    <link href="~/Content/css/bootstrap.min-3.3.0.css" rel="stylesheet" id="bootstrap-css">
+    <script src="~/Content/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min-3.3.0.js"></script>
+    <script src="~/Content/js/panel.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/12c7af4725.js"></script>
+
+</head>
+
+<body>
+    <!-- Popups modals -->
+    <div id="modalReporteGastos" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 20px; text-align: center;">REPORTE DE GASTOS</h4>
+                </div>
+                <div>
+                    <p style="text-align: center; margin-top: 5%;" for="periodoGastos">Periodo de gastos:</p>
+                    <select style="text-align: center; margin-left: 43%; margin-bottom: 5%;" name="periodoGastos"
+                            id="periodoGastos" onchange="return getPeriodoGastosFilter(this.value);">
+                        <option value="d">Diario</option>
+                        <option value="m">Mensual</option>
+                        <option value="a">Anual</option>
+                    </select>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Período</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.lstGastos)
+                            {
+                                <tr>
+                                    <th scope="row">@item.Periodo</th>
+                                    <td>@string.Format(cultureInfo, "{0:c}", item.Monto)</td>
+                                    <td>@item.Fecha</td>
+                                    <td>@item.Detalle</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer" style="margin-bottom: 5%;">
+                    <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                            data-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <a href="@Url.Action("GenerarPdf", "Reporte", new { tipo = "gastos" })" class="btn btn-primary" style="margin-top: 5%;">Exportar como PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalReporteCaja" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 20px; text-align: center;">REPORTE DE CAJA</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <p style="text-align: center; margin-top: 5%;" for="periodoGastos">Filtro:</p>
+                        <select style="text-align: center; margin-left: 10%; margin-bottom: 5%;" name="cajaPerioro"
+                                id="cajaPerioro">
+                            <option value="01">Enero</option>
+                            <option value="02">Febrero</option>
+                            <option value="03">Marzo</option>
+                            <option value="04">Abril</option>
+                            <option value="05">Mayo</option>
+                            <option value="06">Junio</option>
+                            <option value="07">Julio</option>
+                            <option value="08">Agosto</option>
+                            <option value="09">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                        <input type="text" id="year-caja" placeholder="Ingrese año" style="margin-left: 30px" />
+                        <button type="button" class="btn btn-secondary" style="margin-left: 30px" onclick="return getReporteCajaFilter(this.value)">
+                            Filtrar
+                        </button>
+                        <button type="button" class="btn btn-secondary" style="margin-left: 8px" onclick="return reiniciarModal()">
+                            Reiniciar
+                        </button>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                @if (Model.lstReporteCaja.Count > 0 && Model.lstReporteCaja[0].Anio > 0)
+                                {
+                                    <th scope="col">Año</th>
+                                }
+                                <th scope="col">Mes</th>
+                                <th scope="col">Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.lstReporteCaja)
+                            {
+                                if (item.Anio > 0)
+                                {
+                                    <tr>
+                                        <th scope="row">@item.Anio</th>
+                                        <th scope="row">@item.Fecha</th>
+                                        <td>$@item.Total</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <th scope="row">@item.Fecha</th>
+                                        <td>$@item.Total</td>
+                                    </tr>
+                                }
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer" style="margin-bottom: 5%;">
+                    <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                            data-dismiss="modal">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalReporteAbonos" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="width: 890px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 20px; text-align: center;">REPORTE DE ABONOS</h4>
+                </div>
+                <div class="modal-body">
+                    @using (Html.BeginForm("FiltrarAbonos", "Reporte"))
+                    {
+                        <p style="text-align: center; margin-top: 5%;" for="periodoEstadias">Periodo de abonos:</p>
+                        <div style="width: 100%; text-align: center">
+                            @Html.DropDownListFor(m => m.periodosEstadias.Id,
+                         new SelectList(Model.lstPeriodoEstadias, "Id", "Detalle"), "", new { @class = "text-center",
+                             Style = "margin: 0 auto; width: 150px" })
+                            <button type="submit" class="btn btn-primary" style="margin-left: 10px">Filtrar</button>
+                        </div>
+
+                    }
+                    <button type="button" class="btn btn-primary" style="margin-left: 10px" onclick="return reiniciarModal()">Reiniciar</button>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                @if (Model.lstAbonados[0].Periodo != null)
+                                {
+                                    <th>Periodo</th>
+                                }
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Dominio</th>
+                                <th scope="col">Tipo abono</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Tipo vehiculo</th>
+                                <th scope="col">Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.lstAbonados != null)
+                            {
+                                foreach (var item in Model.lstAbonados)
+                                {
+                                    <tr>
+                                        @if (item.Periodo != null)
+                                        {
+                                            <td>@item.Periodo</td>
+                                        }
+                                        <th scope="row">@item.Nombre</th>
+                                        <td>@item.Apellido</td>
+                                        <td>@item.Dominio</td>
+                                        <td>@item.TipoAbono</td>
+                                        <td>@string.Format(cultureInfo, "{0:c}", item.Importe)</td>
+                                        <td>@item.TipoVehiculo</td>
+                                        <td>@item.FechaStr</td>
+                                        <td style="color: @(item.IdPeriodo > 0 ? "green" : "red")">@(item.IdPeriodo > 0 ? "PAGADO" : "NO PAGADO")</td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer" style="margin-bottom: 5%;">
+                    <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                            data-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <a href="@Url.Action("GenerarPdf", "Reporte", new { tipo = "abonados" })" class="btn btn-primary" style="margin-top: 5%;">Exportar como PDF</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalReporteEstadias" class="modal @Model.mostrarModalEstadias" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="text-align: center;">REPORTE DE ESTADIAS</h4>
+                </div>
+                <div>
+                    @using (Html.BeginForm("FiltrarEstadias", "Reporte"))
+                    {
+                        <p style="text-align: center; margin-top: 5%;" for="periodoEstadias">Periodo de gastos:</p>
+                        <div style="width: 100%; text-align: center">
+                            @Html.DropDownListFor(m => m.periodosEstadias.Id,
+                         new SelectList(Model.lstPeriodoEstadias, "Id", "Detalle"), "", new { @class = "text-center",
+                             Style = "margin: 0 auto; width: 150px" })
+                            <button type="submit" class="btn btn-primary" style="margin-left: 10px">Filtrar</button>
+                        </div>
+
+                    }
+
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Dominio</th>
+                                <th scope="col">Tipo Estadia</th>
+                                <th scope="col">Importe</th>
+                                <th scope="col">Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.lstEstadias != null)
+                            {
+                                foreach (var item in Model.lstEstadias)
+                                {
+                                    <tr>
+                                        <th scope="row">@item.Dominio</th>
+                                        <td>@item.TipoEstadia</td>
+                                        <td>@string.Format(cultureInfo, "{0:c}", item.Importe)</td>
+                                        <td>@item.Fecha</td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="modal-footer" style="margin-bottom: 5%;">
+                    <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                            data-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <a href="@Url.Action("GenerarPdf", "Reporte",new { tipo = "estadias" })" class="btn btn-primary" style="margin-top: 5%;">Exportar como PDF</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Popups modals -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
+                    MENU
+                </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="font-weight: bold; font-size: 18px" class="navbar-brand" href="#">
+                    Panel de Reportes
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p style="padding-top: 15px; padding-bottom: 15px; margin: 0;">@(((Usuario)Session["usr"]).Username)</p>
+                    </li>
+                    <li class="dropdown ">
+                        <a style="font-weight: bold; font-size: 18px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Menú
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">HERRAMIENTAS</li>
+                            <li class=""><a href="@Url.Action("PanelControl", "Panel")">Panel de control</a></li>
+                            <li class=""><a href="@Url.Action("Home", "Home")">Inicio</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("CerrarSesion", "Login")">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid main-container">
+        <div class="col-md-2 sidebar">
+            <div class="row">
+                <!-- uncomment code for absolute positioning tweek see top comment in css -->
+                <div class="absolute-wrapper"> </div>
+                <!-- Menu -->
+                <div class="side-menu">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <!-- Main Menu -->
+                        <div class="side-menu-container">
+                            <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="#" style="font-weight:bold; font-size: 18px;">
+                                        <i class="fa fa-chevron-right fa-fw"></i>
+                                        Bienvenido
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalReporteGastos" href="#"
+                                       style="font-size: 16px;"><i class="fa fa-money fa-fw"></i>Reporte de gastos</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalReporteCaja" href="#"
+                                       style="font-size: 16px;"><i class="fa fa-usd fa-fw"></i>Reporte de caja</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalReporteAbonos" href="#"
+                                       style="font-size: 16px;"><i class="fa fa-users fa-fw"></i>Reporte de abonos</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalReporteEstadias" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-calendar fa-fw"></i> Reporte de
+                                        estadías
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        var periodoGasto = '';
+        $(document).ready(function () {
+            setComboboxPeriodoGastos();
+            if (@Json.Encode(@ViewBag.loadGastosModal)) {
+                periodoGasto = '@ViewBag.tipoPeriodoGasto';
+                $("#modalReporteGastos").modal();
+            } else {
+                periodoGasto = 'd';
+                $("#modalReporteGastos").modal('hide');
+            }
+            if (@Json.Encode(@ViewBag.loadModalEstadias)) {
+                $("#modalReporteEstadias").modal();
+            }
+            if (@Json.Encode(@ViewBag.loadModalCaja)) {
+                $("#modalReporteCaja").modal();
+            }
+            if (@Json.Encode(@ViewBag.loadModalAbonos)) {
+                $("#modalReporteAbonos").modal();
+            }
+
+            setComboboxPeriodoGastos();
+        })
+
+        function getPeriodoGastosFilter(value) {
+            periodoGasto = value;
+            window.location.href = '@Url.Action("getGastos", "Reporte")?tipo=' + periodoGasto;
+        }
+
+        function setComboboxPeriodoGastos() {
+            $('#periodoGastos').val(periodoGasto)
+        }
+
+        function getReporteCajaFilter() {
+            var periodo = document.getElementById("cajaPerioro").value;
+            var year = document.getElementById("year-caja").value;
+            window.location.href = '@Url.Action("getFiltroCaja", "Reporte")?periodo=' + periodo + "&year=" + year;
+        }
+
+        function reiniciarModal() {
+            window.location.href = '@Url.Action("PanelReportes", "Reporte")';
+        }
+    </script>
+</body>
+
+</html>

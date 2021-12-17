@@ -1,0 +1,677 @@
+﻿@using System.Globalization;
+@using SoftParking.Models;
+@model SoftParking.Models.MvcModel
+
+@{
+    Layout = null;
+
+    var usr = (Usuario)Session["usr"];
+    var cultureInfo = new CultureInfo("es-AR");
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="~/Content/css/panelStyle.css" rel="stylesheet" id="bootstrap-css">
+    <link href="~/Content/css/bootstrap.min-3.3.0.css" rel="stylesheet" id="bootstrap-css">
+    <script src="~/Content/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min-3.3.0.js"></script>
+    <script src="~/Content/js/panel.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/12c7af4725.js"></script>
+</head>
+
+<body>
+    <!-- Popups modals -->
+    <div id="modalTarifas" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size:22px; text-align: center;">MODIFICAR TARIFA</h4>
+                </div>
+                <div>
+                    <p style="font-size: 18px; text-align: center; margin-top: 5%;" for="nombreEstadia">Seleccionar tarifa:</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Tipo Vehiculo</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.lstTarifas)
+                            {
+                                <tr>
+                                    <th scope="row">@item.IdTarifa</th>
+                                    <td>@item.TipoVehiculo</td>
+                                    <td>@string.Format(cultureInfo, "{0:c}", item.Precio)</td>
+                                    <td><button type="button" class="btn btn-primary px-3" onclick="obtenerValoresTarifa(@Json.Encode(@item))"><i class="fa fa-edit" style="font-size: 18px"></i></button></td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                @using (Html.BeginForm("ActualizarTarifa", "Panel", FormMethod.Post))
+                {
+                    @Html.HiddenFor(e => e.tarifa.IdTarifa, new { @id = "idTarifa" })
+
+                    <div class="modal-body">
+                        <div>
+                            <p for="precioActualEstadia" style="text-align: center;">Precio actual:</p>
+                            <input style="text-align: center; margin-left: 35%; margin-bottom: 0.5%;" type="text"
+                                   id="precioActualTarifa" name="precioActualTarifa" disabled><br><br>
+                        </div>
+
+                        <div>
+                            <p for="precioNuevoEstadia" style="text-align: center;">Precio nuevo:</p>
+                            @Html.TextBoxFor(e => e.tarifa.NuevoPrecio, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;" })
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin-bottom: 5%;">
+                        <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                                data-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 5%;">Guardar</button>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modalAbonos" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 22px; text-align: center;">MODIFICAR ABONOS</h4>
+                </div>
+                <div>
+                    <p style="font-size: 18px; text-align: center; margin-top: 5%;" for="nombreEstadia">Seleccionar abono:</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Tipo Abono</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.lstTiposAbonos)
+                            {
+                                <tr>
+                                    <th scope="row">@item.Id</th>
+                                    <td>@item.TipoAbono</td>
+                                    <td>@string.Format(cultureInfo, "{0:c}", item.Monto)</td>
+                                    <td><button type="button" class="btn btn-primary px-3" onclick="obtenerValoresAbono(@Json.Encode(@item))"><i class="fa fa-edit" style="font-size: 18px"></i></button></td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                @using (Html.BeginForm("ActualizarAbono", "Panel", FormMethod.Post))
+                {
+                    @Html.HiddenFor(e => e.tipoAbonos.Id, new { @id = "idTipoAbono" })
+
+                    <div class="modal-body" style="display: inline-block">
+                        <div>
+                            <p for="tipoAbono" style="text-align: center;">Tipo abono:</p>
+                            <input style="text-align: center; margin-left: 35%; margin-bottom: 0.5%;" type="text"
+                                   id="tipoAbono" name="tipoAbono" disabled><br><br>
+                        </div>
+
+                        <div>
+                            <p for="TipoAbono" style="text-align: center;">Tipo abono nuevo:</p>
+                            @Html.TextBoxFor(e => e.tipoAbonos.TipoAbono, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;" })
+                        </div>
+                    </div>
+
+                    <div class="modal-body" style="display: inline-block">
+                        <div>
+                            <p for="precioActualEstadia" style="text-align: center;">Precio actual:</p>
+                            <input style="text-align: center; margin-left: 35%; margin-bottom: 0.5%;" type="text"
+                                   id="precioActualAbono" name="precioActualAbono" disabled><br><br>
+                        </div>
+
+                        <div>
+                            <p for="precioNuevoAbono" style="text-align: center;">Precio nuevo:</p>
+                            @Html.TextBoxFor(e => e.tipoAbonos.NuevoMonto, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;" })
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin-bottom: 5%;">
+                        <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                                data-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 5%;">Guardar</button>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modalModAbonados" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 22px; text-align: center;">MODIFICAR ABONADOS</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <p style="font-size: 18px; text-align: center; margin-top: 5%;" for="nombreEstadia">Seleccionar abonado:</p>
+                        <table class="table abonados">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">Dominio</th>
+                                    <th scope="col">Tipo abono</th>
+                                    <th scope="col">Tipo vehiculo</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.lstAbonados != null)
+                                {
+                                    foreach (var item in Model.lstAbonados)
+                                    {
+                                        <tr>
+                                            <th scope="row">@item.Nombre</th>
+                                            <td>@item.Apellido</td>
+                                            <td>@item.Dominio</td>
+                                            <td>@item.TipoAbono</td>
+                                            <td>@item.TipoVehiculo</td>
+                                            <td><button type="button" class="btn btn-primary px-3 btn-activar" onclick="obtenerValoresAbonado(@Json.Encode(@item))"><i class="fa fa-edit" style="font-size: 18px"></i></button></td>
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    @using (Html.BeginForm("ActualizarAbonado", "Panel", FormMethod.Post, new { @class = "ui form" }))
+                    {
+                        @Html.HiddenFor(e => e.abonado.IdAbonado, new { @id = "idAbonadoMod" })
+                        <div class="col-md-6" style="margin-top: 5%;">
+                            <p for="nombreAbonado">Nombre:</p>
+                            @*<input type="text" id="nombreAbonado" name="nombreAbonado"><br><br>*@
+                            @Html.TextBoxFor(m => m.abonado.Nombre, new { @name = "nombre", @required = "true", @Id = "nombreAbonadoMod" })
+                        </div>
+                        <div class="col-md-6" style="margin-top: 5%;">
+                            <p for="apellidoAbonado">Apellido:</p>
+                            @Html.TextBoxFor(m => m.abonado.Apellido, new { @name = "apellido", @required = "true", @Id = "apellidoAbonadoMod" })
+                            <br><br>
+                        </div>
+                        <div class="col-md-6">
+                            <p for="dominioAbonado">Dominio:</p>
+                            @Html.TextBoxFor(m => m.abonado.Dominio, new { @name = "dominio", @required = "true", @Id = "dominioAbonadoMod" })
+                            <br><br>
+                        </div>
+                        <div class="col-md-6">
+                            <p for="dniAbonado">DNI:</p>
+                            @Html.TextBoxFor(m => m.abonado.Dni, new { @name = "dni", @required = "true", @Id = "dniAbonadoMod" })
+                            <br><br>
+                        </div>
+                        <div class="col-md-6">
+                            <p for="telefonoAbonado">Telefono:</p>
+                            @Html.TextBoxFor(m => m.abonado.Telefono, new { @name = "tel", @required = "true", @Id = "telAbonadoMod" })
+                            <br><br>
+                        </div>
+                        <div class="col-md-6">
+                            <p for="vehiculoAbonado">Tipo de vehículo:</p>
+                            @Html.DropDownListFor(m => m.abonado.IdTipoVehiculo,
+                           new SelectList(Model.lstTipoVehiculos, "Id", "Tipo"), "Tipo de Cuenta", new { @class = "ui dropdown", @Id = "idTipoVeAbonadoMod" })
+                        </div>
+                        <div class="col-md-6">
+                            <p for="vehiculoAbonado">Tipos de abonos:</p>
+                            @Html.DropDownListFor(m => m.abonado.IdTipoAbono,
+                           new SelectList(Model.lstTiposAbonos, "Id", "Tipo"), "Tipos de Abonos", new { @class = "ui dropdown", @Id = "idTipoAboAbonadoMod" })
+                        </div>
+                        <div class="modal-footer" style="margin-bottom: 5%;">
+                            <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                                    data-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 5%;">Guardar</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalAgregarAbonados" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 22px; text-align: center;">AGREGAR ABONADO</h4>
+                </div>
+                <div>
+                    @using (Html.BeginForm("RegistrarAbonado", "Panel", FormMethod.Post, new { @class = "ui form" }))
+                    {
+                        <div class="col-md-6" style="margin-top: 5%;">
+                            <p for="nombreAbonado">Nombre:</p>
+                            @*<input type="text" id="nombreAbonado" name="nombreAbonado"><br><br>*@
+                            @Html.TextBoxFor(m => m.abonado.Nombre, new { @name = "nombre", @required = "true" })
+                        </div>
+                        <div class="col-md-6" style="margin-top: 5%;">
+                            <p for="apellidoAbonado">Apellido:</p>
+                            @Html.TextBoxFor(m => m.abonado.Apellido, new { @name = "apellido", @required = "true" })
+                            <br><br>
+                        </div>
+                        <div class="col-md-6">
+                            <p for="dominioAbonado">Dominio:</p>
+                            @Html.TextBoxFor(m => m.abonado.Dominio, new { @name = "dominio", @required = "true" })
+                            <br><br>
+                        </div>
+                        <div class="col-md-6">
+                            <p for="dniAbonado">DNI:</p>
+                            @Html.TextBoxFor(m => m.abonado.Dni, new { @name = "dni", @required = "true" })
+                            <br><br>
+                        </div>
+                        <div class="col-md-6">
+                            <p for="telefonoAbonado">Telefono:</p>
+                            @Html.TextBoxFor(m => m.abonado.Telefono, new { @name = "tel", @required = "true" })
+                            <br><br>
+                        </div>
+                        <div class="col-md-6">
+                            <p for="vehiculoAbonado">Tipo de vehículo:</p>
+                            @Html.DropDownListFor(m => m.abonado.IdTipoVehiculo,
+                           new SelectList(Model.lstTipoVehiculos, "Id", "Tipo"), "Tipo de Cuenta", new { @class = "ui dropdown" })
+                        </div>
+                        <div class="col-md-6">
+                            <p for="vehiculoAbonado">Tipos de abonos:</p>
+                            @Html.DropDownListFor(m => m.abonado.IdTipoAbono,
+                           new SelectList(Model.lstTiposAbonos, "Id", "Tipo"), "Tipos de Abonos", new { @class = "ui dropdown" })
+                        </div>
+                        <div class="modal-footer" style="margin-bottom: 5%;">
+                            <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                                    data-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 5%;">Agregar</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalModPromo" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 22px; text-align: center;">MODIFICAR PROMOCION</h4>
+                </div>
+                <div>
+                    <p style="text-align: center; margin-top: 5%;" for="nombreUsuario">Promoción:</p>
+                    <select style="text-align: center; margin-left: 43%; margin-bottom: 5%;" name="nombreUsuario"
+                            id="nombreUsuario">
+                        <option value="promoUno">Promo 1</option>
+                        <option value="promoDos">Promo 2</option>
+                        <option value="promoTres">Promo 3</option>
+                    </select>
+                </div>
+                <div class="modal-body">
+                    <p for="precioActualPromo" style="text-align: center;">Precio actual:</p>
+                    <input style="text-align: center; margin-left: 35%; margin-bottom: 0.5%;" type="text"
+                           id="precioActualPromo" name="precioActualPromo" disabled><br><br>
+                </div>
+                <div class="modal-body">
+                    <p for="precioNuevoPromo" style="text-align: center;">Precio nuevo:</p>
+                    <input style="text-align: center; margin-left: 35%; margin-bottom: 0.5%;" type="text"
+                           id="precioNuevoPromo" name="precioNuevoPromo"><br><br>
+                </div>
+                <div class="modal-footer" style="margin-bottom: 5%;">
+                    <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                            data-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" style="margin-top: 5%;">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalModEstadia" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 22px; text-align: center;">MODIFICAR ESTADIA</h4>
+                </div>
+                <div>
+                    <p style="font-size: 18px; text-align: center; margin-top: 5%;" for="nombreEstadia">Seleccionar estadía:</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.lstTiposEstadias)
+                            {
+                                <tr>
+                                    <th scope="row">@item.IdTipoEstadia</th>
+                                    <td>@item.Tipo</td>
+                                    <td>@string.Format(cultureInfo, "{0:c}", item.Monto)</td>
+                                    <td><button type="button" class="btn btn-primary px-3" onclick="obtenerValores(@Json.Encode(@item))"><i class="fa fa-edit" style="font-size: 18px"></i></button></td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                @using (Html.BeginForm("ActualizarTipoEstadia", "Panel", FormMethod.Post))
+                {
+                    @Html.HiddenFor(e => e.tipoEstadias.IdTipoEstadia, new { @id = "idEstadia" })
+
+                    <div class="modal-body">
+                        <div>
+                            <p for="precioActualEstadia" style="text-align: center;">Precio actual:</p>
+                            <input style="text-align: center; margin-left: 35%; margin-bottom: 0.5%;" type="text"
+                                   id="precioActualEstadia" name="precioActualEstadia" disabled><br><br>
+                        </div>
+
+                        <div>
+                            <p for="precioNuevoEstadia" style="text-align: center;">Precio nuevo:</p>
+                            @Html.TextBoxFor(e => e.tipoEstadias.NuevoMonto, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;" })
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin-bottom: 5%;">
+                        <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                                data-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 5%;">Guardar</button>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+    <div id="modalModUsuario" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 22px; text-align: center;">MODIFICAR USUARIO</h4>
+                </div>
+                <div>
+                    <p style="font-size: 18px; text-align: center; margin-top: 5%;"> Seleccionar Usuario </p>
+
+                </div>
+                <div>
+                    @Html.DropDownListFor(m => m.usuario.Id,
+                      new SelectList(Model.lstUsuarios, "Id", "Username"), "Usuarios", new { @class = "ui dropdown", @Id="select-usuario",
+                          @style = "text-align: center; margin-left: 43%; margin-bottom: 5%;" })
+                </div>
+
+                @using (Html.BeginForm("ActualizarUsuario", "Panel", FormMethod.Post))
+                {
+                    @Html.HiddenFor(e => e.usuario.Id, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;", @Id = "id-mod" })
+                    <div class="modal-body">
+                        <p for="precioActualEstadia" style="text-align: center;">Usuario:</p>
+                        @Html.TextBoxFor(e => e.usuario.Username, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;", @Id = "usr-mod" })
+
+                        <br><br>
+                    </div>
+                    <div class="modal-body">
+                        <p for="passUsuario" style="text-align: center;">Password:</p>
+                        @Html.TextBoxFor(e => e.usuario.Password, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;", @Id = "pass-mod" })
+
+                        <br><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="modalAgregarUsuarios" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="text-align: center;">AGREGAR USUARIO</h4>
+                </div>
+                @using (Html.BeginForm("GuardarUsuario", "Panel", FormMethod.Post))
+                {
+                    <div class="modal-body">
+                        <div>
+                            <p for="precioActualEstadia" style="text-align: center;">Usuario:</p>
+                            @Html.TextBoxFor(e => e.usuario.Username, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;" })
+                        </div>
+
+                        <div>
+                            <p for="precioNuevoEstadia" style="text-align: center;">Contraseña:</p>
+                            @Html.TextBoxFor(e => e.usuario.Password, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;" })
+                        </div>
+
+                        <div style="margin-top: 20px; margin-left: 20px">
+                            @Html.CheckBoxFor(e => e.usuario.EsAdmin, new { Style = "text-align: center; margin-left: 35%; margin-bottom: 0.5%;" })
+                            @Html.LabelFor(e => e.usuario.EsAdmin, "Permisos de administrador")
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin-bottom: 5%;">
+                        <button type="button" class="btn btn-secondary" style="margin-top: 5%;"
+                                data-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 5%;">Guardar</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Fin Popups modals -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
+                    MENU
+                </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="font-weight: bold; font-size: 18px" class="navbar-brand" href="@Url.Action("PanelControl", "Panel")">
+                    Panel de control
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p style="padding-top: 15px; padding-bottom: 15px; margin: 0;">@(((Usuario)Session["usr"]).Username)</p>
+                    </li>
+                    <li class="dropdown ">
+                        <a style="font-weight: bold; font-size: 18px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Menú
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">HERRAMIENTAS</li>
+                            <li class=""><a href="@Url.Action("Home", "Home")">Inicio</a></li>
+                            @if (usr.EsAdmin)
+                            {
+                                <li class=""><a href="@Url.Action("PanelReportes", "Reporte")">Reportes</a></li>
+                            }
+                            <li class="divider"></li>
+                            <li><a href="">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid main-container">
+        <div class="col-md-2 sidebar">
+            <div class="row">
+                <!-- uncomment code for absolute positioning tweek see top comment in css -->
+                <div class="absolute-wrapper"> </div>
+                <!-- Menu -->
+                <div class="side-menu">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <!-- Main Menu -->
+                        <div class="side-menu-container">
+                            <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="#" style="font-weight:bold; font-size: 18px;">
+                                        <i class="fa fa-chevron-right fa-fw"></i>
+                                        Bienvenido
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalTarifas" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-usd fa-fw"></i> Modificar
+                                        tarifas
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalAbonos" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-usd fa-fw"></i> Modificar abonos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalModAbonados" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-user fa-fw"></i> Modificar
+                                        abonados
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalAgregarAbonados" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-plus fa-fw"></i> Agregar
+                                        abonado
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalModEstadia" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-hourglass-half fa-fw"></i>
+                                        Modificar
+                                        estadías
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalModUsuario" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-user fa-fw"></i> Modificar
+                                        usuarios
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#modalAgregarUsuarios" href="#"
+                                       style="font-size: 16px;">
+                                        <i class="fa fa-plus fa-fw"></i> Agregar
+                                        usuario
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    @if (Model.mostrarAlertSuccess)
+    {
+        <div class="alert alert-success" role="alert" id="success-alert" style="width: 50%; margin: 0 auto;">
+            Se guardó correctamente
+        </div>
+    }
+
+
+
+    <script>
+        function obtenerValores(values) {
+            var idTipoEstadia = values.IdTipoEstadia;
+            var montoActual = values.Monto;
+
+            document.getElementById("idEstadia").value = idTipoEstadia;
+            document.getElementById("precioActualEstadia").value = "$" + montoActual;
+        }
+
+        function obtenerValoresTarifa(values) {
+            var idTarifa = values.IdTarifa;
+            var montoActual = values.Precio;
+
+            document.getElementById("idTarifa").value = idTarifa;
+            document.getElementById("precioActualTarifa").value = "$" + montoActual;
+        }
+
+        function obtenerValoresAbono(values) {
+            var idAbono = values.Id;
+            var montoActual = values.Monto;
+            var tipoAbono = values.TipoAbono;
+
+            document.getElementById("idTipoAbono").value = idAbono;
+            document.getElementById("tipoAbono").value = tipoAbono;
+            document.getElementById("precioActualAbono").value = "$" + montoActual;
+        }
+
+        $(document).ready(function () {
+            var mostrarSuccess = @Json.Encode(Model.mostrarAlertSuccess);
+            if (mostrarSuccess) {
+                mostrarSuccessAlert();
+            }
+        });
+
+        function mostrarSuccessAlert() {
+            setTimeout(function () {
+                $("#success-alert").alert('close');
+            }, 3000);
+
+        }
+
+        function obtenerValoresAbonado(values) {
+            var idAbonadoMod = values.IdAbonado;
+            var nombreAbonadoMod = values.Nombre;
+            var apellidoAbonadoMod = values.Apellido;
+            var dominioAbonadoMod = values.Dominio;
+            var dniAbonadoMod = values.Dni;
+            var telAbonadoMod = values.Telefono;
+            var idTipoVeAbonadoMod = values.IdTipoVehiculo;
+            var idTipoAboAbonadoMod = values.IdTipoAbono;
+
+            document.getElementById("idAbonadoMod").value = idAbonadoMod;
+            document.getElementById("nombreAbonadoMod").value = nombreAbonadoMod;
+            document.getElementById("apellidoAbonadoMod").value = apellidoAbonadoMod;
+            document.getElementById("dominioAbonadoMod").value = dominioAbonadoMod;
+            document.getElementById("dniAbonadoMod").value = dniAbonadoMod;
+            document.getElementById("telAbonadoMod").value = telAbonadoMod;
+            document.getElementById("idTipoVeAbonadoMod").value = idTipoVeAbonadoMod;
+            document.getElementById("idTipoAboAbonadoMod").value = idTipoAboAbonadoMod;
+        }
+
+        $('#select-usuario').change(function () {
+            var usrVal = $(this).val();
+            var obj = @Html.Raw(Json.Encode(Model.lstUsuarios));
+            obj = obj.find(x => x.Id == usrVal);
+
+            document.getElementById("id-mod").value = usrVal;
+            document.getElementById("usr-mod").value = obj.Username;
+            document.getElementById("pass-mod").value = obj.Password;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Generar</title>
+    <link href="~/Content/css/bootstrap.min-3.3.0.css" rel="stylesheet" id="bootstrap-css">
+
+    <style type="text/css">
+        .contenedor {
+            height: 500px;
+            width: 300px;
+            top: 60px;
+            position: relative;
+        }
+
+        .border {
+            border: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container contenedor text-center border">
+        <div class="">
+            <p>Hola</p>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("GenerarPdf", "Home", FormMethod.Post, new { @class = "ui form" }))
+    {
+        <button type="submit">Generar</button>
+    }
+
+</body>
+</html>
